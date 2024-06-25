@@ -1,7 +1,7 @@
 import json
 
 import scrapy
-import requests
+from requests import Request
 from inline_requests import inline_requests
 from scrapy_selenium import SeleniumRequest
 
@@ -47,7 +47,7 @@ class RealEstateSpider(scrapy.Spider):
             'sortType': self.sort_type,
             'place': self.place,
         }
-        primary_data_url = requests.Request('GET', self.BASE_URL, params=params).prepare().url
+        primary_data_url = Request('GET', self.BASE_URL, params=params).prepare().url
         yield SeleniumRequest(
             url=primary_data_url,
             callback=self.parse,
