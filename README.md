@@ -2,7 +2,7 @@
 ```
 scrapy crawl real_estate_spider -a limit=3
 ```
-### response (decoded):
+### processed_items_list.json (decoded):
 ```json
 [
   {
