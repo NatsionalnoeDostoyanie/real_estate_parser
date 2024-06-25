@@ -61,8 +61,8 @@ class RealEstateSpider(scrapy.Spider):
         if self.collect_extra_data:
             raw_items_list = []
             for item in primary_items_list:
-                extra_item_url = f'{self.EXTRA_DATA_BASE_URL}{str(item["objId"])}'
                 try:
+                    extra_item_url = f'{self.EXTRA_DATA_BASE_URL}{str(item["objId"])}'
                     resp = yield SeleniumRequest(url=extra_item_url)
                     data_json = json.loads(resp.xpath('//body//text()').get())
                     raw_extra_item = data_json['data']
