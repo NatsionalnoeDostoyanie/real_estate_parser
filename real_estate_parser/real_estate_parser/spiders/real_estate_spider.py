@@ -13,7 +13,7 @@ class RealEstateSpider(scrapy.Spider):
             #  Many more params could be added here
             self,
             offset=0,
-            limit=100,
+            limit=999999999,
             sort_field='obj_publ_dt',
             sort_type='desc',
             place='0-1',
