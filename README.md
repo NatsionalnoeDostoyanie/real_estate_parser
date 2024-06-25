@@ -1,8 +1,12 @@
 ## Usage
+Be careful about the limit!
+<br/>
+Using limit=999999999 and place='0-1' (default values), I've been waiting for 15 minutes
 ```
 scrapy crawl real_estate_spider -a limit=3
 ```
-### response (decoded):
+
+### processed_items_list.json (decoded):
 ```json
 [
   {
